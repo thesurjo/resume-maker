@@ -2,6 +2,9 @@
 
 A simple, responsive, and customizable resume maker built with Next.js and styled with the ShadCN design system. This web application allows users to input their personal details, work experience, education, and skills to generate a downloadable PDF resume. Perfect for anyone in need of a quick and professional-looking resume!
 
+![Resume Maker Screenshot](screenshots/resume-maker.png)
+
+
 ## Features
 
 - **Dynamic Resume Creation:** Input personal details, work experience, education, and skills to generate a professional resume.
