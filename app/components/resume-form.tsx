@@ -53,18 +53,14 @@ export default function ResumeForm() {
         switch (selectedTemplate) {
             case 'classic':
                 return <ClassicTemplate />
-            //   case 'modern':
-            //     return <ModernTemplate {...formData} />
-            //   case 'minimal':
-            //     return <MinimalTemplate {...formData} />
             default:
                 return null
         }
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] gap-2 md:h-screen">
+            <div className="md:overflow-y-scroll space-y-6 pr-8 pl-2">
                 <div>
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -311,7 +307,7 @@ export default function ResumeForm() {
                         </div>
                     </Card>
                 </div>
-                <div>
+                {/* <div>
                     <Label>Choose Template</Label>
                     <RadioGroup
                         value={selectedTemplate}
@@ -321,18 +317,10 @@ export default function ResumeForm() {
                             <RadioGroupItem value="classic" id="classic" />
                             <Label htmlFor="classic">Classic</Label>
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <RadioGroupItem value="modern" id="modern" />
-                            <Label htmlFor="modern">Modern</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <RadioGroupItem value="minimal" id="minimal" />
-                            <Label htmlFor="minimal">Minimal</Label>
-                        </div>
                     </RadioGroup>
-                </div>
+                </div> */}
             </div>
-            <div className="border p-4 rounded-lg">
+            <div className="md:overflow-y-scroll border p-4 rounded-lg">
                 {renderSelectedTemplate()}
             </div>
         </div>

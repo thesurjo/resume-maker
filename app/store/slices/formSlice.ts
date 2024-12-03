@@ -37,11 +37,11 @@ const initialState: FormState = {
   email: '',
   phone: '',
   summary: '',
-  experiences: [{ title: '', company: '', startDate: '', endDate: '', description: '' }],
-  projects: [{ name: '', description: '', technologies: [] }],
-  education: [{ degree: '', institution: '', year: '' }],
+  experiences: [],
+  projects: [],
+  education: [],
   skills: [],
-  profilePicture: '/placeholder.svg?height=100&width=100'
+  profilePicture: ''
 }
 
 export const formSlice = createSlice({
@@ -66,8 +66,13 @@ export const formSlice = createSlice({
       state.projects.push({ name: '', description: '', technologies: [] })
     },
     updateProject: (state, action: PayloadAction<{ index: number; field: keyof Project; value: string | string[] }>) => {
-      const { index, field, value } = action.payload
-      state.projects[index][field] = value
+      const { index, field, value } = action.payload;
+
+      if (field === 'technologies' && Array.isArray(value)) {
+        state.projects[index][field] = value;
+      } else if (field !== 'technologies') {
+        state.projects[index][field] = value as string;
+      }
     },
     removeProject: (state, action: PayloadAction<number>) => {
       state.projects.splice(action.payload, 1)
