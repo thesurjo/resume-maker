@@ -113,7 +113,7 @@ export default function ClassicTemplate() {
         <div>
           <h3 className="font-semibold mb-2">Projects</h3>
             {displayData.projects.map((project, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative mb-2">
                 <h4 className="text-sm font-semibold">{project.name}</h4>
                 <p className="text-sm m-0 mt-0.5">{project.description}</p>
                 <p className="text-sm text-gray-600 mt-1">
